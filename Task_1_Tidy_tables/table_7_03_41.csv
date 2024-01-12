@@ -1,0 +1,52 @@
+id,team_name,table_name,crop_name,states,year,area,production
+1,yash_raj_productions,7_03_41,Coconut,ANDHRA PRADESH,2016,103.95,982.42
+2,yash_raj_productions,7_03_41,Coconut,ANDHRA PRADESH,2017,115.21,950.02
+3,yash_raj_productions,7_03_41,Coconut,ANDHRA PRADESH,2018,99.51,963.37
+4,yash_raj_productions,7_03_41,Coconut,ARUNACHAL PRADESH,2016,0.07,0.1
+5,yash_raj_productions,7_03_41,Coconut,ARUNACHAL PRADESH,2017,0.07,0.1
+6,yash_raj_productions,7_03_41,Coconut,ARUNACHAL PRADESH,2018,0.06,0.14
+7,yash_raj_productions,7_03_41,Coconut,ASSAM,2016,19.73,91.25
+8,yash_raj_productions,7_03_41,Coconut,ASSAM,2017,20.6,105.7
+9,yash_raj_productions,7_03_41,Coconut,ASSAM,2018,19.92,116.01
+10,yash_raj_productions,7_03_41,Coconut,BIHAR,2016,14.9,97.3
+11,yash_raj_productions,7_03_41,Coconut,BIHAR,2017,14.9,97.3
+12,yash_raj_productions,7_03_41,Coconut,BIHAR,2018,11.35,52.88
+13,yash_raj_productions,7_03_41,Coconut,CHHATTISGARH,2016,1.85,21.02
+14,yash_raj_productions,7_03_41,Coconut,CHHATTISGARH,2017,1.48,6.05
+15,yash_raj_productions,7_03_41,Coconut,CHHATTISGARH,2018,1.54,7.53
+16,yash_raj_productions,7_03_41,Coconut,GUJARAT,2016,22.81,215.2
+17,yash_raj_productions,7_03_41,Coconut,GUJARAT,2017,24.44,232.17
+18,yash_raj_productions,7_03_41,Coconut,GUJARAT,2018,24.94,166.32
+19,yash_raj_productions,7_03_41,Coconut,KARNATAKA,2016,526.38,3529.83
+20,yash_raj_productions,7_03_41,Coconut,KARNATAKA,2017,513.85,4671.07
+21,yash_raj_productions,7_03_41,Coconut,KARNATAKA,2018,518.39,4326.75
+22,yash_raj_productions,7_03_41,Coconut,KERALA,2016,770.62,5113.14
+23,yash_raj_productions,7_03_41,Coconut,KERALA,2017,770.79,5137
+24,yash_raj_productions,7_03_41,Coconut,KERALA,2018,807.13,5829
+25,yash_raj_productions,7_03_41,Coconut,MAHARASHTRA,2016,27.75,186.67
+26,yash_raj_productions,7_03_41,Coconut,MAHARASHTRA,2017,20.9,137.14
+27,yash_raj_productions,7_03_41,Coconut,MAHARASHTRA,2018,26.97,88.22
+28,yash_raj_productions,7_03_41,Coconut,MIZORAM,2016,0.03,0.11
+29,yash_raj_productions,7_03_41,Coconut,MIZORAM,2017,0.04,0.11
+30,yash_raj_productions,7_03_41,Coconut,MIZORAM,2018,0.03,0.1
+31,yash_raj_productions,7_03_41,Coconut,NAGALAND,2016,0.33,1.84
+32,yash_raj_productions,7_03_41,Coconut,NAGALAND,2017,0.47,1.84
+33,yash_raj_productions,7_03_41,Coconut,NAGALAND,2018,1.18,6.51
+34,yash_raj_productions,7_03_41,Coconut,ODISHA,2016,50.91,226
+35,yash_raj_productions,7_03_41,Coconut,ODISHA,2017,50.91,235.64
+36,yash_raj_productions,7_03_41,Coconut,ODISHA,2018,50.91,235.66
+37,yash_raj_productions,7_03_41,Coconut,TAMIL NADU,2016,459.74,4247.12
+38,yash_raj_productions,7_03_41,Coconut,TAMIL NADU,2017,461.06,4531.47
+39,yash_raj_productions,7_03_41,Coconut,TAMIL NADU,2018,441.49,4152.01
+40,yash_raj_productions,7_03_41,Coconut,TELANGANA,2016,0.48,0.01
+41,yash_raj_productions,7_03_41,Coconut,TELANGANA,2017,0.5,1.44
+42,yash_raj_productions,7_03_41,Coconut,TELANGANA,2018,0.49,8.05
+43,yash_raj_productions,7_03_41,Coconut,TRIPURA,2016,7.2,20.31
+44,yash_raj_productions,7_03_41,Coconut,TRIPURA,2017,4.61,22.23
+45,yash_raj_productions,7_03_41,Coconut,TRIPURA,2018,4.57,22.02
+46,yash_raj_productions,7_03_41,Coconut,WEST BENGAL,2016,29.51,257.11
+47,yash_raj_productions,7_03_41,Coconut,WEST BENGAL,2017,29.63,258.32
+48,yash_raj_productions,7_03_41,Coconut,WEST BENGAL,2018,30.25,260.45
+49,yash_raj_productions,7_03_41,Coconut,OTHERS,2016,52.22,266.9
+50,yash_raj_productions,7_03_41,Coconut,OTHERS,2017,52.65,97.98
+51,yash_raj_productions,7_03_41,Coconut,OTHERS,2018,57.99,177.55

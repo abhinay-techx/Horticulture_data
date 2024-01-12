@@ -1,0 +1,41 @@
+id,team_name,table_name,crop_name,states,year,area,production
+1,yash_raj_productions,7_03_38,Arecanut,ANDHRA PRADESH,2016,0.52,1.8
+2,yash_raj_productions,7_03_38,Arecanut,ANDHRA PRADESH,2017,0.56,2.37
+3,yash_raj_productions,7_03_38,Arecanut,ANDHRA PRADESH,2018,0.56,2.37
+4,yash_raj_productions,7_03_38,Arecanut,ARUNACHAL PRADESH,2016,1.02,8.23
+5,yash_raj_productions,7_03_38,Arecanut,ASSAM,2016,77.62,74.78
+6,yash_raj_productions,7_03_38,Arecanut,ASSAM,2017,69.68,70.94
+7,yash_raj_productions,7_03_38,Arecanut,ASSAM,2018,80.81,77.9
+8,yash_raj_productions,7_03_38,Arecanut,KARNATAKA,2016,235.77,436.29
+9,yash_raj_productions,7_03_38,Arecanut,KARNATAKA,2017,227.84,435.75
+10,yash_raj_productions,7_03_38,Arecanut,KARNATAKA,2018,254.64,517.35
+11,yash_raj_productions,7_03_38,Arecanut,KERALA,2016,100.1,102.2
+12,yash_raj_productions,7_03_38,Arecanut,KERALA,2017,95.96,122.16
+13,yash_raj_productions,7_03_38,Arecanut,KERALA,2018,98.52,130.1
+14,yash_raj_productions,7_03_38,Arecanut,MADHYA PRADESH,2017,2.29,3.52
+15,yash_raj_productions,7_03_38,Arecanut,MAHARASHTRA,2016,2.35,3.48
+16,yash_raj_productions,7_03_38,Arecanut,MAHARASHTRA,2018,2.31,3.41
+17,yash_raj_productions,7_03_38,Arecanut,MEGHALAYA,2016,16.87,26.2
+18,yash_raj_productions,7_03_38,Arecanut,MEGHALAYA,2017,17.02,27.13
+19,yash_raj_productions,7_03_38,Arecanut,MEGHALAYA,2018,16.93,24.99
+20,yash_raj_productions,7_03_38,Arecanut,MIZORAM,2016,10.74,7.27
+21,yash_raj_productions,7_03_38,Arecanut,MIZORAM,2017,11.86,7.27
+22,yash_raj_productions,7_03_38,Arecanut,MIZORAM,2018,11.86,7.27
+23,yash_raj_productions,7_03_38,Arecanut,NAGALAND,2016,0.39,2.3
+24,yash_raj_productions,7_03_38,Arecanut,NAGALAND,2017,0.39,2.3
+25,yash_raj_productions,7_03_38,Arecanut,NAGALAND,2018,0.39,2.3
+26,yash_raj_productions,7_03_38,Arecanut,TAMIL NADU,2016,6.69,9.79
+27,yash_raj_productions,7_03_38,Arecanut,TAMIL NADU,2017,6.77,9.76
+28,yash_raj_productions,7_03_38,Arecanut,TAMIL NADU,2018,6.5,10.14
+29,yash_raj_productions,7_03_38,Arecanut,TRIPURA,2016,4.7,9.92
+30,yash_raj_productions,7_03_38,Arecanut,TRIPURA,2017,4.7,9.92
+31,yash_raj_productions,7_03_38,Arecanut,TRIPURA,2018,5.99,20.41
+32,yash_raj_productions,7_03_38,Arecanut,WEST BENGAL,2016,11.52,22.66
+33,yash_raj_productions,7_03_38,Arecanut,WEST BENGAL,2017,11.55,22.85
+34,yash_raj_productions,7_03_38,Arecanut,WEST BENGAL,2018,11.55,22.85
+35,yash_raj_productions,7_03_38,Arecanut,OTHERS,2016,6.07,8.92
+36,yash_raj_productions,7_03_38,Arecanut,OTHERS,2017,6.03,8.88
+37,yash_raj_productions,7_03_38,Arecanut,OTHERS,2018,6.59,13.89
+38,yash_raj_productions,7_03_38,Arecanut,TOTAL,2016,474.36,713.84
+39,yash_raj_productions,7_03_38,Arecanut,TOTAL,2017,454.65,722.85
+40,yash_raj_productions,7_03_38,Arecanut,TOTAL,2018,496.65,832.98

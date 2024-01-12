@@ -1,0 +1,810 @@
+---
+title: "Horticulture Data (7.3.33 - 7.3.48)"
+author: "Team Yash Raj Productions"
+output: html_document
+date: "2023-02-24"
+---
+
+```{r setup, include=FALSE}
+library(tidyr)
+library(dplyr)
+library(janitor)
+library(ggplot2)
+
+#Read in the data
+areadata <- read.csv("/Users/yash/Desktop/y2023_feb__data_wrangle_data_viz/project_tables/table_7_3_44.csv")
+```
+
+## Introduction
+
+The State-wise Area and Production for Individual Horticulture Crops report provides valuable insights into the cultivation and production of a wide variety of horticultural crops across different states in India. The report contains detailed tables and data on crop area, production, and yield, as well as information on the value of production, exports, and prices.
+
+The data in this report can be used by a wide range of stakeholders, including farmers, policymakers, researchers, and consumers, to understand the trends and patterns in horticultural production and consumption in India. The report covers a diverse range of crops, including fruits, vegetables, spices, and plantation crops, providing a comprehensive overview of the horticultural industry in the country.
+
+Overall, the State-wise Area and Production for Individual Horticulture Crops report is a valuable resource for anyone interested in the agricultural sector in India, providing insights into the production, consumption, and economics of a wide range of horticultural crops.
+
+## Tidying the Data
+
+### Before Tidying
+
+```{r}
+areadata
+```
+
+### After Tidying
+
+```{r echo=FALSE}
+#Rename columns in a cleaner way
+colnames(areadata) <- c("sr_no", "states_uts", "area_2015_16", "production_2015_16", "area_2016_17", "production_2016_17", "area_2017_18", "production_2017_18")
+
+# Tidy the data
+tidy_areadata <- areadata %>%
+  pivot_longer(cols = c("area_2015_16", "production_2015_16", "area_2016_17", "production_2016_17", "area_2017_18", "production_2017_18"), 
+               names_to = c(".value", "year"),
+               names_pattern = "([^_]+)_(\\d{4})",
+               values_drop_na = TRUE)
+
+tidy_areadata$id <- 1:nrow(tidy_areadata)
+
+#Adding column for crop name
+tidy_areadata$crop_name <- "Cumin"
+
+#Add two new columns 'table_name' and 'team_name'
+tidy_areadata$table_name <- "7_03_44"
+
+tidy_areadata$team_name <- "yash_raj_productions"
+
+tidy_areadata <- tidy_areadata %>% 
+  select(id, team_name, table_name, crop_name, states_uts:production)
+```
+
+```{r echo=TRUE}
+head(tidy_areadata)
+```
+
+## Interesting questions for the dataset and our thought process behind it
+
+### Questions:
+<br>
+1. Are there any horticultural crops that are declining in production or area cultivated, and what factors are contributing to this? <br><br>
+2. How do the prices of horticultural crops vary across states, and what factors influence these price differences? <br><br>
+3. Which crops are the most profitable for farmers to grow, and how does profitability vary by state and crop? <br><br>
+4. What role do exports play in the horticultural industry in India, and which crops are most commonly exported? <br><br>
+5. How do weather patterns and climate change impact the production of horticultural crops in different states? <br><br>
+6. How do government policies and subsidies influence the production and consumption of horticultural crops in India? <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Including Plots <br>
+
+### Plots created by Abhinay Kumar (7.3.38 - 7.3.43) <br>
+```{r echo=FALSE}
+# Read in the data
+arecanut <- read.csv("/Users/yash/Downloads/Table_7_3_38.csv", header = TRUE)
+```
+
+#### Plot Explanation <br>
+
+The graph is a bar plot of the top 10 states by Arecanut production. Arecanut is a type of nut that is commonly grown in India and other parts of Asia. The plot shows the total production of Arecanut in tonnes for each of the top 10 states.
+
+The x-axis shows the states, and they are reordered based on their total production from highest to lowest. The y-axis shows the total production of Arecanut in tonnes. Each bar is filled with a different color using the scale_fill_viridis_d() function to make it easier to distinguish between the different states.
+
+The plot clearly shows that Karnataka is the state with the highest production of Arecanut followed by Kerala, Assam, and Tamil Nadu. The other states in the top 10 are Andhra Pradesh, Goa, Maharashtra, Meghalaya, Nagaland, and Odisha. <br>
+
+
+```{r echo=FALSE}
+arecanut <- clean_names(arecanut)
+
+arecanut <- clean_names(arecanut)  %>% 
+  rename("id"= "sl_no") %>% 
+  rename("states" = "state_ut") %>% 
+  rename("area_2016"= "area_2015_16") %>% 
+  rename("area_2017"= "area_2016_17") %>% 
+  rename("area_2018"= "area_2017_18") %>% 
+  rename("production_2016"= "production_2015_16") %>% 
+  rename("production_2017"= "production_2016_17") %>% 
+  rename("production_2018"= "production_2017_18")
+
+names(arecanut)
+
+arecanut$production_2016 <- as.numeric(arecanut$production_2016)
+names(arecanut)
+
+# Tidy the data
+tidy_arecanut <- arecanut %>%
+  pivot_longer(cols = c("area_2016", "production_2016", "area_2017", "production_2017", "area_2018", "production_2018"), 
+               names_to = c(".value", "year"),
+               names_pattern = "(.+)_(\\d{4})",
+               values_drop_na = TRUE)
+
+
+tidy_arecanut$id <- 1:nrow(tidy_arecanut)
+
+tidy_arecanut$crop_name <- "Arecanut"
+
+tidy_arecanut <- tidy_arecanut %>% 
+  select(id,team_name,table_name,crop_name, states,year,area,production)
+
+
+##################Plot###################################
+
+# Plot 1: Bar plot of top 10 states by production
+tidy_areadata<-tidy_arecanut
+
+top_states <- tidy_areadata %>%
+  group_by(states) %>%
+  summarize(total_production = sum(production)) %>%
+  arrange(desc(total_production)) %>%
+  slice(1:10)
+
+ggplot(top_states, aes(x = reorder(states, total_production), y = total_production, fill = reorder(states,total_production))) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(title = "Top 10 states by Arecanut production",
+       x = "States/UTs",
+       y = "Total production (in tonnes)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# Plot 2 Aggregate production by state yearwise
+prod_summary <- tidy_areadata %>% 
+  group_by(states) %>% 
+  summarize(total_production = sum(production)) %>% 
+  arrange(desc(total_production))
+
+# Select top 5 states by production
+top_states <- prod_summary$states[1:5]
+
+# Filter original data to include only top 5 states
+top_state_data <- tidy_areadata %>% 
+  filter(states %in% top_states)
+
+# Plot the data
+ggplot(top_state_data, aes(x = states, y = production, fill = factor(year))) +
+  geom_col(position = "dodge") +
+  facet_wrap(~crop_name) +
+  xlab("States/Uts") +
+  ylab("Production") +
+  ggtitle("Top 5 States/Uts by Production") +
+  scale_fill_discrete(name = "Year")
+
+#Plot 3 - Bar graph showing the total area and production of Brinjal by state:
+tidy_arecanut %>%
+  group_by(states) %>%
+  summarize(total_area = sum(area), total_production = sum(production)) %>%
+  ggplot(aes(x = states, y = total_area, fill = states)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_viridis_d() +
+  labs(title = "Total Area of Arecanut Production by State",
+       x = "",
+       y = "Area (in hectares)",
+       fill = "State") +
+  theme(legend.position = "bottom")
+
+# Read in the data
+cashewnut <- read.csv("/Users/yash/Downloads/Table_7_3_39.csv", header = TRUE)
+cashewnut <- clean_names(cashewnut)
+
+cashewnut <- clean_names(cashewnut)  %>% 
+  rename("id"= "sl_no") %>% 
+  rename("states" = "state_ut") %>% 
+  rename("area_2016"= "area_2015_16") %>% 
+  rename("area_2017"= "area_2016_17") %>% 
+  rename("area_2018"= "area_2017_18") %>% 
+  rename("production_2016"= "production_2015_16") %>% 
+  rename("production_2017"= "production_2016_17") %>% 
+  rename("production_2018"= "production_2017_18")
+
+names(cashewnut)
+
+cashewnut$production_2016 <- as.numeric(cashewnut$production_2016)
+names(cashewnut)
+
+# Tidy the data
+tidy_cashewnut <- cashewnut %>%
+  pivot_longer(cols = c("area_2016", "production_2016", "area_2017", "production_2017", "area_2018", "production_2018"), 
+               names_to = c(".value", "year"),
+               names_pattern = "(.+)_(\\d{4})",
+               values_drop_na = TRUE)
+
+
+tidy_cashewnut$id <- 1:nrow(tidy_cashewnut)
+
+tidy_cashewnut$crop_name <- "Cashewnut"
+
+tidy_cashewnut <- tidy_cashewnut %>% 
+  select(id,team_name,table_name,crop_name, states,year,area,production)
+
+##################Plot###################################
+
+# Plot 1: Bar plot of top 10 states by production
+tidy_areadata<-tidy_cashewnut
+
+top_states <- tidy_areadata %>%
+  group_by(states) %>%
+  summarize(total_production = sum(production)) %>%
+  arrange(desc(total_production)) %>%
+  slice(1:10)
+
+ggplot(top_states, aes(x = reorder(states, total_production), y = total_production, fill = reorder(states,total_production))) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(title = "Top 10 states by Cashewnut production",
+       x = "States/UTs",
+       y = "Total production (in tonnes)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# Plot 2 Aggregate production by state yearwise
+prod_summary <- tidy_areadata %>% 
+  group_by(states) %>% 
+  summarize(total_production = sum(production)) %>% 
+  arrange(desc(total_production))
+
+# Select top 5 states by production
+top_states <- prod_summary$states[1:5]
+
+# Filter original data to include only top 5 states
+top_state_data <- tidy_areadata %>% 
+  filter(states %in% top_states)
+
+# Plot the data
+ggplot(top_state_data, aes(x = states, y = production, fill = factor(year))) +
+  geom_col(position = "dodge") +
+  facet_wrap(~crop_name) +
+  xlab("States/Uts") +
+  ylab("Production") +
+  ggtitle("Top 5 States/Uts by Production") +
+  scale_fill_discrete(name = "Year")
+
+#Plot 3 - Bar graph showing the total area and production of Brinjal by state:
+tidy_areadata %>%
+  group_by(states) %>%
+  summarize(total_area = sum(area), total_production = sum(production)) %>%
+  ggplot(aes(x = states, y = total_area, fill = states)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_viridis_d() +
+  labs(title = "Total Area of Cashewnut Production by State",
+       x = "",
+       y = "Area (in hectares)",
+       fill = "State") +
+  theme(legend.position = "bottom")
+
+
+
+##########################Cocoa####################################
+
+# Read in the data
+cocoa <- read.csv("/Users/yash/Downloads/Table_7_3_40.csv", header = TRUE)
+cocoa <- clean_names(cocoa)
+
+cocoa <- clean_names(cocoa)  %>% 
+  rename("id"= "sl_no") %>% 
+  rename("states" = "state_ut") %>% 
+  rename("area_2016"= "area_2015_16") %>% 
+  rename("area_2017"= "area_2016_17") %>% 
+  rename("area_2018"= "area_2017_18") %>% 
+  rename("production_2016"= "production_2015_16") %>% 
+  rename("production_2017"= "production_2016_17") %>% 
+  rename("production_2018"= "production_2017_18")
+
+names(cocoa)
+
+cocoa$production_2016 <- as.numeric(cocoa$production_2016)
+names(cocoa)
+
+# Tidy the data
+tidy_cocoa <- cocoa %>%
+  pivot_longer(cols = c("area_2016", "production_2016", "area_2017", "production_2017", "area_2018", "production_2018"), 
+               names_to = c(".value", "year"),
+               names_pattern = "(.+)_(\\d{4})",
+               values_drop_na = TRUE)
+
+
+tidy_cocoa$id <- 1:nrow(tidy_cocoa)
+
+tidy_cocoa$crop_name <- "Cocoa"
+
+tidy_cocoa <- tidy_cocoa %>% 
+  select(id,team_name,table_name,crop_name, states,year,area,production)
+
+##################Plot###################################
+
+# Plot 1: Bar plot of top 10 states by production
+tidy_areadata<-tidy_cocoa
+
+top_states <- tidy_areadata %>%
+  group_by(states) %>%
+  summarize(total_production = sum(production)) %>%
+  arrange(desc(total_production)) %>%
+  slice(1:10)
+
+ggplot(top_states, aes(x = reorder(states, total_production), y = total_production, fill = reorder(states,total_production))) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(title = "Top 10 states by Cocoa production",
+       x = "States/UTs",
+       y = "Total production (in tonnes)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# Plot 2 Aggregate production by state yearwise
+prod_summary <- tidy_areadata %>% 
+  group_by(states) %>% 
+  summarize(total_production = sum(production)) %>% 
+  arrange(desc(total_production))
+
+# Select top 5 states by production
+top_states <- prod_summary$states[1:5]
+
+# Filter original data to include only top 5 states
+top_state_data <- tidy_areadata %>% 
+  filter(states %in% top_states)
+
+# Plot the data
+ggplot(top_state_data, aes(x = states, y = production, fill = factor(year))) +
+  geom_col(position = "dodge") +
+  facet_wrap(~crop_name) +
+  xlab("States/Uts") +
+  ylab("Production") +
+  ggtitle("Top 5 States/Uts by Production") +
+  scale_fill_discrete(name = "Year")
+
+#Plot 3 - Bar graph showing the total area and production of Brinjal by state:
+tidy_arecanut %>%
+  group_by(states) %>%
+  summarize(total_area = sum(area), total_production = sum(production)) %>%
+  ggplot(aes(x = states, y = total_area, fill = states)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_viridis_d() +
+  labs(title = "Total Area of Cocoa Production by State",
+       x = "",
+       y = "Area (in hectares)",
+       fill = "State") +
+  theme(legend.position = "bottom")
+
+
+#############################coconut#################################
+
+# Read in the data
+coconut <- read.csv("/Users/yash/Downloads/Table_7_3_41.csv", header = TRUE)
+coconut <- clean_names(coconut)
+
+coconut <- clean_names(coconut)  %>% 
+  rename("id"= "sl_no") %>% 
+  rename("states" = "state_ut") %>% 
+  rename("area_2016"= "area_2015_16") %>% 
+  rename("area_2017"= "area_2016_17") %>% 
+  rename("area_2018"= "area_2017_18") %>% 
+  rename("production_2016"= "production_2015_16") %>% 
+  rename("production_2017"= "production_2016_17") %>% 
+  rename("production_2018"= "production_2017_18")
+
+names(coconut)
+
+coconut$production_2016 <- as.numeric(coconut$production_2016)
+names(coconut)
+
+# Tidy the data
+tidy_coconut <- coconut %>%
+  pivot_longer(cols = c("area_2016", "production_2016", "area_2017", "production_2017", "area_2018", "production_2018"), 
+               names_to = c(".value", "year"),
+               names_pattern = "(.+)_(\\d{4})",
+               values_drop_na = TRUE)
+
+
+tidy_coconut$id <- 1:nrow(tidy_coconut)
+
+tidy_coconut$crop_name <- "Coconut"
+
+tidy_coconut <- tidy_coconut %>% 
+  select(id,team_name,table_name,crop_name, states,year,area,production)
+
+##################Plot###################################
+
+# Plot 1: Bar plot of top 10 states by production
+tidy_areadata<-tidy_coconut
+
+top_states <- tidy_areadata %>%
+  group_by(states) %>%
+  summarize(total_production = sum(production)) %>%
+  arrange(desc(total_production)) %>%
+  slice(1:10)
+
+ggplot(top_states, aes(x = reorder(states, total_production), y = total_production, fill = reorder(states,total_production))) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(title = "Top 10 states by Coconut production",
+       x = "States/UTs",
+       y = "Total production (in tonnes)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# Plot 2 Aggregate production by state yearwise
+prod_summary <- tidy_areadata %>% 
+  group_by(states) %>% 
+  summarize(total_production = sum(production)) %>% 
+  arrange(desc(total_production))
+
+# Select top 5 states by production
+top_states <- prod_summary$states[1:5]
+
+# Filter original data to include only top 5 states
+top_state_data <- tidy_areadata %>% 
+  filter(states %in% top_states)
+
+# Plot the data
+ggplot(top_state_data, aes(x = states, y = production, fill = factor(year))) +
+  geom_col(position = "dodge") +
+  facet_wrap(~crop_name) +
+  xlab("States/Uts") +
+  ylab("Production") +
+  ggtitle("Top 5 States/Uts by Production") +
+  scale_fill_discrete(name = "Year")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+### Plots created by Ankit Kumar (7.3.33 - 7.3.37)
+```{r echo=FALSE}
+
+# Read in the data
+crops <- read.csv("/Users/yash/Downloads/yash_raj_productions.csv", header = TRUE)
+crops <- clean_names(crops)  
+  
+#crops
+
+east_zone <- c("ARUNACHAL PRADESH","ASSAM","BIHAR","JHARKHAND","MANIPUR","MEGHALAYA","MIZORAM","NAGALAND","ODISHA","SIKKIM","TRIPURA","WEST BENGAL")
+west_zone <- c("CHHATTISGARH","GUJARAT", "MAHARASHTRA","RAJASTHAN")
+north_zone <- c("HARYANA","HIMACHAL PRADESH", "JAMMU & KASHMIR","PUNJAB","UTTAR PRADESH","UTTARAKHAND")
+south_zone <- c("KARNATAKA","ANDHRA PRADESH", "MADHYA PRADESH","KERALA","TAMIL NADU","TELANGANA")               
+               
+# Filter the data by zones
+east_crops <- crops %>% filter(states_uts %in% east_zone)
+west_crops <- crops %>% filter(states_uts %in% west_zone)
+north_crops <- crops %>% filter(states_uts %in% north_zone)
+south_crops <- crops %>% filter(states_uts %in% south_zone)
+
+# Group the data by crops and calculate the sum of production
+east_crops_grouped <- east_crops %>% group_by(crop_name) %>% summarise(total_production = sum(production))
+west_crops_grouped <- west_crops %>% group_by(crop_name) %>% summarise(total_production = sum(production))
+north_crops_grouped <- north_crops %>% group_by(crop_name) %>% summarise(total_production = sum(production))
+south_crops_grouped <- south_crops %>% group_by(crop_name) %>% summarise(total_production = sum(production))
+
+# Sort the data by production in descending order
+east_crops_sorted <- east_crops_grouped %>% arrange(desc(total_production))
+west_crops_sorted <- west_crops_grouped %>% arrange(desc(total_production))
+north_crops_sorted <- north_crops_grouped %>% arrange(desc(total_production))
+south_crops_sorted <- south_crops_grouped %>% arrange(desc(total_production))
+
+# Select the top 5 crops based on production
+east_top_5 <- head(east_crops_sorted, 5)
+west_top_5 <- head(west_crops_sorted, 5)
+north_top_5 <- head(north_crops_sorted, 5)
+south_top_5 <- head(south_crops_sorted, 5)
+
+# Combine the data into a single data frame
+top_5_crops <- rbind(east_top_5, west_top_5, north_top_5, south_top_5)
+top_5_crops$zone <- c(rep("East Zone", 5), rep("West Zone", 5), rep("North Zone", 5), rep("South Zone", 5))
+```
+
+#### Plot Explanation <br>
+
+Based on the plot, we can observe that plantation crops and tomato are the crops produced across almost all the zones in India. However, their production is particularly high in the East and west zone. Other top crops produced in the South zone include chillies (dried) and coconut. The East zone produces a significant amount of ginger and tomato. The West zone produces a substantial amount of cumin,turmeric and garlic. The North zone produces a high amount of tomato and watermelon, while the production of loose flower and ginger is relatively low across all zones.
+
+Overall, the plot indicates that crop production in India varies significantly by region, with each zone having its dominant crops. The production of certain crops is concentrated in specific regions, which can be attributed to differences in climate, soil type, and other environmental factors. Additionally, the plot highlights the importance of plantation crops and coconut in the Indian agriculture industry, which could have significant economic implications for the country. <br>
+
+```{r echo=FALSE}
+# Plot the graph
+ggplot(top_5_crops, aes(x = reorder(crop_name, total_production), y = total_production, fill = zone)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  ggtitle("Production of Crops in Each Zone") +
+  xlab("Crops") +
+  ylab("Total Production") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+ 
+##################
+# Filter the data by zone and crop, and group by crop
+top_crops <- crops %>%
+  filter(states_uts %in% c(east_zone, west_zone, north_zone, south_zone)) %>%
+  group_by(states_uts, crop_name) %>%
+  summarise(production = sum(production), .groups = "drop") %>%
+  group_by(states_uts) %>%
+  slice_max(order_by = production, n = 5)
+
+east_zone_data <- crops[crops$states_uts %in% east_zone, ]
+west_zone_data <- crops[crops$states_uts %in% west_zone, ]
+north_zone_data <- crops[crops$states_uts %in% north_zone, ]
+south_zone_data <- crops[crops$states_uts %in% south_zone, ]
+
+# Plot the graph
+ggplot(top_crops, aes(x = reorder(crop_name, production), y = production, fill = states_uts)) +
+  geom_col(position = "dodge") +
+  labs(title = "Top 5 Crops by Production in Each Zone",
+       x = "Crop",
+       y = "Production (in metric tonnes)",
+       fill = "Zone") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+
+# Plot the graph for East zone
+east_zone_data <- subset(crops, states_uts %in% east_zone)
+east_zone_top5 <- head(east_zone_data[order(-east_zone_data$production),], 5)
+
+ggplot(east_zone_top5, aes(x=reorder(crop_name, production), y=production, fill=crop_name)) + 
+  geom_bar(stat="identity") +
+  ggtitle("Top 5 Crops by Production in East Zone") +
+  xlab("Crop") + 
+  ylab("Production (in tons)") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  guides(fill="none")
+
+tidy_brinjal19 <- read.csv("/Users/yash/Downloads/Tyagi_data - brinjal19.csv")
+
+#Plot 1 - Bar graph showing the total area and production of Brinjal by state:
+tidy_brinjal19 %>%
+  group_by(states) %>%
+  summarize(total_area = sum(area), total_production = sum(production)) %>%
+  ggplot(aes(x = states, y = total_area, fill = states)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_viridis_d() +
+  labs(title = "Total Area of Brinjal Production by State",
+       x = "",
+       y = "Area (in hectares)",
+       fill = "State") +
+  theme(legend.position = "bottom")
+
+
+#Plot 2 - Stacked bar graph showing the area and production of Brinjal by state over the years:
+tidy_brinjal19 %>%
+  group_by(year, states) %>%
+  summarize(total_area = sum(area), total_production = sum(production)) %>%
+  ggplot(aes(x = year, y = total_area, fill = states)) +
+  geom_col() +
+  labs(title = "Area and Production of Brinjal by State Over the Years",
+       x = "Year",
+       y = "Area (in hectares)")
+
+#Plot 3 - Scatter plot showing the relationship between area and production of Brinjal:
+tidy_brinjal19 %>%
+  ggplot(aes(x = area, y = production)) +
+  geom_point(color = "red") +
+  labs(title = "Relationship between Area and Production of Brinjal",
+       x = "Area (in hectares)",
+       y = "Production (in tonnes)")
+
+
+### Plot 4: Bar plot of top 10 states by production
+top_states <- tidy_brinjal19 %>%
+  group_by(states) %>%
+  summarize(total_production = sum(production)) %>%
+  arrange(desc(total_production)) %>%
+  slice(1:10)
+
+ggplot(top_states, aes(x = reorder(states, total_production), y = total_production, fill = reorder(states, total_production))) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(title = "Top 10 states by Brinjal production",
+       x = "States/UTs",
+       y = "Total production (in tonnes)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+#write.csv(tidy_brinjal19, file = "Tyagi_data - brinjal19.csv", row.names = FALSE)
+
+## Top 5 states
+top_states <- tidy_brinjal19 %>% 
+  group_by(states) %>% 
+  summarize(total_prod = sum(production)) %>% 
+  top_n(5, total_prod) %>% 
+  arrange(desc(total_prod))
+
+ggplot(tidy_brinjal19 %>% filter(states %in% top_states$states), 
+       aes(x=reorder(states, production), y=production, fill=as.factor(year))) +
+  geom_bar(stat="identity", position="dodge") +
+  scale_fill_brewer(palette="Set2") +
+  xlab("States") + ylab("Total production") +
+  ggtitle("Total Brinjal Production by State and Year (Top 5)")
+
+crop_sub <- c("Topiaco","Tomato","Plantation Crops", "Cocoa", "Watermelon")
+####
+g5 <- ggplot(crops, aes(x = states_uts, y = production, fill = crop_name)) 
+g5+geom_bar(stat = "identity") + facet_wrap(~year) + xlab("States/Uts") +
+  ylab("Production") +
+  ggtitle("State-wise Production Distribution")+ theme(axis.text.x = element_text(angle = 90, hjust = 0,vjust=0.5))
+
+
+####
+top_crops <- crops %>% 
+  group_by(crop_name) %>% 
+  summarize(total_production = sum(production, na.rm = TRUE)) %>% 
+  top_n(10, total_production) %>% 
+  select(crop_name)
+View(top_crops)
+
+years <- crops %>% 
+  filter(crop_name %in% top_crops$crop_name) %>% 
+  group_by(year) %>% 
+  summarize(n = n()) %>% 
+  filter(n == length(top_crops$crop_name)) %>% 
+  pull(year)
+
+crop_sub <- c("Topiaco","Tomato","Plantation Crops", "Cocoa", "Watermelon")
+
+####
+total_production <- crops %>% 
+  group_by(crop_name) %>% 
+  summarize(total = sum(area, na.rm = TRUE)) %>% 
+  arrange(desc(total)) %>% 
+  top_n(5)
+
+# Make a bar plot of the top 5 crops
+ggplot(total_production, aes(x = crop_name, y = total)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Crop", y = "Total Production", title = "Top 5 Crop Productions in India")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Plots created by Yash Raj (7.3.44 - 7.3.48)
+```{r echo=FALSE}
+#Read in the data
+areadata <- read.csv("/Users/yash/Desktop/y2023_feb__data_wrangle_data_viz/project_tables/table_7_3_44.csv")
+
+
+#Rename columns in a cleaner way
+colnames(areadata) <- c("sr_no", "states_uts", "area_2015_16", "production_2015_16", "area_2016_17", "production_2016_17", "area_2017_18", "production_2017_18")
+
+# Tidy the data
+tidy_areadata <- areadata %>%
+  pivot_longer(cols = c("area_2015_16", "production_2015_16", "area_2016_17", "production_2016_17", "area_2017_18", "production_2017_18"), 
+               names_to = c(".value", "year"),
+               names_pattern = "([^_]+)_(\\d{4})",
+               values_drop_na = TRUE)
+
+tidy_areadata$id <- 1:nrow(tidy_areadata)
+
+#Adding column for crop name
+tidy_areadata$crop_name <- "Cumin"
+
+#Add two new columns 'table_name' and 'team_name'
+tidy_areadata$table_name <- "7_03_44"
+
+tidy_areadata$team_name <- "yash_raj_productions"
+
+tidy_areadata <- tidy_areadata %>% 
+  select(id, team_name, table_name, crop_name, states_uts:production)
+
+
+#Plot 2 - Stacked bar graph showing the area and production of cumin by state over the years:
+tidy_areadata %>%
+  group_by(year, states_uts) %>%
+  summarize(total_area = sum(area), total_production = sum(production)) %>%
+  ggplot(aes(x = year, y = total_area, fill = states_uts)) +
+  geom_col() +
+  labs(title = "Area and Production of Cumin by State Over the Years",
+       x = "Year",
+       y = "Area (in hectares)")
+
+#Plot 4 - Faceted line graph showing the trend of cumin area and production by state:
+tidy_areadata %>%
+  pivot_longer(cols = c("area", "production"), 
+               names_to = "metric", 
+               values_to = "value") %>%
+  ggplot(aes(x = year, y = value, color = states_uts, group = states_uts)) +
+  geom_line() +
+  facet_wrap(~metric, scales = "free_y") +
+  labs(title = "Trend of Cumin Area and Production by State",
+       x = "Year",
+       y = "") +
+  theme(legend.position = "bottom")
+
+#Top 5 States by Production across all the years
+
+# Aggregate production by state
+prod_summary <- tidy_areadata %>% 
+  group_by(states_uts) %>% 
+  summarize(total_production = sum(production)) %>% 
+  arrange(desc(total_production))
+
+# Select top 5 states by production
+top_states <- prod_summary$states_uts[1:5]
+
+# Filter original data to include only top 5 states
+top_state_data <- tidy_areadata %>% 
+  filter(states_uts %in% top_states)
+
+# Plot the data
+ggplot(top_state_data, aes(x = states_uts, y = production, fill = factor(year))) +
+  geom_col(position = "dodge") +
+  facet_wrap(~crop_name) +
+  xlab("States/Uts") +
+  ylab("Production") +
+  ggtitle("Top 5 States/Uts by Production") +
+  scale_fill_discrete(name = "Year")
+```
+
+
+#### Plot Explanation <br>
+
+The code is generating two bar plots that show the total production of crops in the top 5 and bottom 5 states/UTs in India. The first plot shows the states/UTs with the highest production, while the second plot shows the states/UTs with the lowest production. Both plots have the states/UTs on the x-axis and the total production on the y-axis. The fill color of the bars represents the states/UTs.
+
+In the first plot, we can see that the state of Uttar Pradesh has the highest production, followed by the states of Punjab, Madhya Pradesh, Maharashtra, and Andhra Pradesh. It is interesting to note that all of these states are located in different regions of India and have different climates and soil conditions, indicating that crop production is not limited to a particular region or climate.
+
+In the second plot, we can see that the states of Sikkim, Manipur, Nagaland, Mizoram, and Arunachal Pradesh have the lowest production. These states are all located in the northeastern part of India, which is known for its hilly terrain and tropical climate. This suggests that the geography and climate of a region can play a significant role in determining the crop production potential.
+
+Overall, these plots provide valuable insights into the distribution of crop production across different states/UTs in India and highlight the importance of understanding the local geography and climate in optimizing crop production. <br>
+
+
+```{r echo=FALSE}
+# read the data
+df <- read.csv("/Users/yash/Downloads/yash_raj_productions.csv")
+
+# Top 5 states with the most production and area
+top5 <- df %>% 
+  group_by(states_uts) %>% 
+  summarise(total_production = sum(production), 
+            total_area = sum(area)) %>% 
+  top_n(5, total_production)
+
+# 5 states with the least production and area
+bottom5 <- df %>% 
+  group_by(states_uts) %>% 
+  summarise(total_production = sum(production), 
+            total_area = sum(area)) %>% 
+  top_n(-5, total_production)
+
+# plot top 5 states with the most production
+ggplot(top5, aes(x = reorder(states_uts, total_production), y = total_production, fill = states_uts)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = scales::hue_pal()(length(unique(top5$states_uts)))) +
+  labs(title = "Production by State/UT (Top 5)", x = "State/UT", y = "Total Production") +
+  theme(legend.position = "none")
+
+
+
+# plot 5 states with the least production
+ggplot(bottom5, aes(x = factor(states_uts, levels = sample(states_uts)), y = total_production, fill = states_uts)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(palette = "Set3") +
+  labs(title = "Production by State/UT (Bottom 5)", x = "State/UT", y = "Total Production") +
+  theme(legend.position = "none")
+```
+

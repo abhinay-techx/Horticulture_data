@@ -1,0 +1,61 @@
+id,team_name,table_name,crop_name,states,year,area,production
+1,yash_raj_productions,7_03_43,Coriander,ANDHRA PRADESH,2016,25.34,10.4
+2,yash_raj_productions,7_03_43,Coriander,ANDHRA PRADESH,2017,4.3,2.37
+3,yash_raj_productions,7_03_43,Coriander,ANDHRA PRADESH,2018,4.3,2.37
+4,yash_raj_productions,7_03_43,Coriander,ASSAM,2016,29.42,55.13
+5,yash_raj_productions,7_03_43,Coriander,ASSAM,2017,28.95,29.68
+6,yash_raj_productions,7_03_43,Coriander,ASSAM,2018,29.65,30.51
+7,yash_raj_productions,7_03_43,Coriander,BIHAR,2016,2.3,1.7
+8,yash_raj_productions,7_03_43,Coriander,BIHAR,2017,2.57,2.36
+9,yash_raj_productions,7_03_43,Coriander,BIHAR,2018,2.08,1.86
+10,yash_raj_productions,7_03_43,Coriander,CHHATTISGARH,2016,2.65,0.75
+11,yash_raj_productions,7_03_43,Coriander,CHHATTISGARH,2017,2.57,0.76
+12,yash_raj_productions,7_03_43,Coriander,CHHATTISGARH,2018,2.85,0.77
+13,yash_raj_productions,7_03_43,Coriander,GUJARAT,2016,88.6,138.8
+14,yash_raj_productions,7_03_43,Coriander,GUJARAT,2017,121.1,189.75
+15,yash_raj_productions,7_03_43,Coriander,GUJARAT,2018,75,116.81
+16,yash_raj_productions,7_03_43,Coriander,HARYANA,2016,2.43,4.41
+17,yash_raj_productions,7_03_43,Coriander,HARYANA,2017,2.45,4.45
+18,yash_raj_productions,7_03_43,Coriander,HARYANA,2018,2.45,4.45
+19,yash_raj_productions,7_03_43,Coriander,HIMACHAL PRADESH,2016,0.17,0.19
+20,yash_raj_productions,7_03_43,Coriander,HIMACHAL PRADESH,2017,0.12,0.19
+21,yash_raj_productions,7_03_43,Coriander,HIMACHAL PRADESH,2018,0.15,0.07
+22,yash_raj_productions,7_03_43,Coriander,KARNATAKA,2016,4.34,1.47
+23,yash_raj_productions,7_03_43,Coriander,KARNATAKA,2017,4.49,1.93
+24,yash_raj_productions,7_03_43,Coriander,KARNATAKA,2018,1.78,0.77
+25,yash_raj_productions,7_03_43,Coriander,MADHYA PRADESH,2016,165.18,108.49
+26,yash_raj_productions,7_03_43,Coriander,MADHYA PRADESH,2017,273.78,396.01
+27,yash_raj_productions,7_03_43,Coriander,MADHYA PRADESH,2018,274.1,383.68
+28,yash_raj_productions,7_03_43,Coriander,MAHARASHTRA,2016,0.04,0.1
+29,yash_raj_productions,7_03_43,Coriander,MAHARASHTRA,2017,1.71,9.68
+30,yash_raj_productions,7_03_43,Coriander,MAHARASHTRA,2018,1.93,4.39
+31,yash_raj_productions,7_03_43,Coriander,MEGHALAYA,2016,0.01,0.05
+32,yash_raj_productions,7_03_43,Coriander,MEGHALAYA,2017,0.01,0.05
+33,yash_raj_productions,7_03_43,Coriander,MEGHALAYA,2018,0.01,0.05
+34,yash_raj_productions,7_03_43,Coriander,MIZORAM,2016,0.06,0.02
+35,yash_raj_productions,7_03_43,Coriander,MIZORAM,2017,0.06,0.02
+36,yash_raj_productions,7_03_43,Coriander,MIZORAM,2018,0.07,0.02
+37,yash_raj_productions,7_03_43,Coriander,NAGALAND,2016,0.09,0.18
+38,yash_raj_productions,7_03_43,Coriander,NAGALAND,2017,0.09,0.15
+39,yash_raj_productions,7_03_43,Coriander,NAGALAND,2018,0.05,0.1
+40,yash_raj_productions,7_03_43,Coriander,ODISHA,2016,19.1,11
+41,yash_raj_productions,7_03_43,Coriander,ODISHA,2017,19.61,10.8
+42,yash_raj_productions,7_03_43,Coriander,ODISHA,2018,19.61,10.8
+43,yash_raj_productions,7_03_43,Coriander,RAJASTHAN,2016,212.73,227.2
+44,yash_raj_productions,7_03_43,Coriander,RAJASTHAN,2017,181.71,206.96
+45,yash_raj_productions,7_03_43,Coriander,RAJASTHAN,2018,97.8,130.2
+46,yash_raj_productions,7_03_43,Coriander,TAMIL NADU,2016,8.31,3.8
+47,yash_raj_productions,7_03_43,Coriander,TAMIL NADU,2017,9.28,5.74
+48,yash_raj_productions,7_03_43,Coriander,TAMIL NADU,2018,0.12,0.08
+49,yash_raj_productions,7_03_43,Coriander,TELANGANA,2016,1.01,0.39
+50,yash_raj_productions,7_03_43,Coriander,TELANGANA,2017,1.01,0.39
+51,yash_raj_productions,7_03_43,Coriander,TELANGANA,2018,1.22,1
+52,yash_raj_productions,7_03_43,Coriander,UTTAR PRADESH,2016,7.47,2.58
+53,yash_raj_productions,7_03_43,Coriander,UTTAR PRADESH,2017,7.8,3.58
+54,yash_raj_productions,7_03_43,Coriander,UTTAR PRADESH,2018,6.79,3.54
+55,yash_raj_productions,7_03_43,Coriander,UTTARAKHAND,2016,0.9,3.8
+56,yash_raj_productions,7_03_43,Coriander,UTTARAKHAND,2017,0.9,3.8
+57,yash_raj_productions,7_03_43,Coriander,UTTARAKHAND,2018,0.9,3.8
+58,yash_raj_productions,7_03_43,Coriander,WEST BENGAL,2016,11.45,14.52
+59,yash_raj_productions,7_03_43,Coriander,WEST BENGAL,2017,11.46,14.56
+60,yash_raj_productions,7_03_43,Coriander,WEST BENGAL,2018,11.46,14.56

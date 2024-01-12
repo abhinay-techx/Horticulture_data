@@ -1,0 +1,13 @@
+id,team_name,table_name,crop_name,states,year,area,production
+1,yash_raj_productions,7_03_40,Cocoa,ANDHRA PRADESH,2016,24.16,7
+2,yash_raj_productions,7_03_40,Cocoa,ANDHRA PRADESH,2017,24.16,7.7
+3,yash_raj_productions,7_03_40,Cocoa,ANDHRA PRADESH,2018,28.76,8.09
+4,yash_raj_productions,7_03_40,Cocoa,KARNATAKA,2016,13.57,2.2
+5,yash_raj_productions,7_03_40,Cocoa,KARNATAKA,2017,13.69,2.42
+6,yash_raj_productions,7_03_40,Cocoa,KARNATAKA,2018,13.69,2.54
+7,yash_raj_productions,7_03_40,Cocoa,KERALA,2016,15.34,6.5
+8,yash_raj_productions,7_03_40,Cocoa,KERALA,2017,15.89,7.15
+9,yash_raj_productions,7_03_40,Cocoa,KERALA,2018,16.59,7.51
+10,yash_raj_productions,7_03_40,Cocoa,TAMIL NADU,2016,28.21,1.5
+11,yash_raj_productions,7_03_40,Cocoa,TAMIL NADU,2017,29.21,1.65
+12,yash_raj_productions,7_03_40,Cocoa,TAMIL NADU,2018,29.48,1.73

@@ -1,0 +1,82 @@
+id,team_name,table_name,crop_name,states,year,area,production
+1,yash_raj_productions,7_03_42,Chillies (Dried),ANDHRA PRADESH,2016,156.06,618.42
+2,yash_raj_productions,7_03_42,Chillies (Dried),ANDHRA PRADESH,2017,209.35,992.9
+3,yash_raj_productions,7_03_42,Chillies (Dried),ANDHRA PRADESH,2018,209.35,992.9
+4,yash_raj_productions,7_03_42,Chillies (Dried),ARUNACHAL PRADESH,2016,2.96,8.29
+5,yash_raj_productions,7_03_42,Chillies (Dried),ARUNACHAL PRADESH,2017,2.96,8.29
+6,yash_raj_productions,7_03_42,Chillies (Dried),ARUNACHAL PRADESH,2018,2.96,8.29
+7,yash_raj_productions,7_03_42,Chillies (Dried),ASSAM,2016,21.41,19.12
+8,yash_raj_productions,7_03_42,Chillies (Dried),ASSAM,2017,21.63,19.38
+9,yash_raj_productions,7_03_42,Chillies (Dried),ASSAM,2018,21.7,20.61
+10,yash_raj_productions,7_03_42,Chillies (Dried),BIHAR,2016,2.9,3
+11,yash_raj_productions,7_03_42,Chillies (Dried),BIHAR,2017,1.6,2.05
+12,yash_raj_productions,7_03_42,Chillies (Dried),BIHAR,2018,1.51,2.73
+13,yash_raj_productions,7_03_42,Chillies (Dried),CHHATTISGARH,2016,4.92,4.4
+14,yash_raj_productions,7_03_42,Chillies (Dried),CHHATTISGARH,2017,5.06,4.32
+15,yash_raj_productions,7_03_42,Chillies (Dried),CHHATTISGARH,2018,4.24,1.5
+16,yash_raj_productions,7_03_42,Chillies (Dried),GUJARAT,2016,14.72,26.91
+17,yash_raj_productions,7_03_42,Chillies (Dried),GUJARAT,2017,15.2,25.32
+18,yash_raj_productions,7_03_42,Chillies (Dried),GUJARAT,2018,11.35,22.07
+19,yash_raj_productions,7_03_42,Chillies (Dried),HARYANA,2016,2.43,4.22
+20,yash_raj_productions,7_03_42,Chillies (Dried),HARYANA,2017,2.2,4
+21,yash_raj_productions,7_03_42,Chillies (Dried),HARYANA,2018,2.2,4
+22,yash_raj_productions,7_03_42,Chillies (Dried),HIMACHAL PRADESH,2016,0.55,0.36
+23,yash_raj_productions,7_03_42,Chillies (Dried),HIMACHAL PRADESH,2017,0.6,0.24
+24,yash_raj_productions,7_03_42,Chillies (Dried),HIMACHAL PRADESH,2018,0.66,0.24
+25,yash_raj_productions,7_03_42,Chillies (Dried),JAMMU & KASHMIR,2016,0.62,0.35
+26,yash_raj_productions,7_03_42,Chillies (Dried),JAMMU & KASHMIR,2017,0.62,0.35
+27,yash_raj_productions,7_03_42,Chillies (Dried),JAMMU & KASHMIR,2018,0.62,0.35
+28,yash_raj_productions,7_03_42,Chillies (Dried),KARNATAKA,2016,95.45,118.49
+29,yash_raj_productions,7_03_42,Chillies (Dried),KARNATAKA,2017,102.29,103.24
+30,yash_raj_productions,7_03_42,Chillies (Dried),KARNATAKA,2018,127.6,260.14
+31,yash_raj_productions,7_03_42,Chillies (Dried),KERALA,2016,1.58,1.49
+32,yash_raj_productions,7_03_42,Chillies (Dried),KERALA,2017,1.71,1.6
+33,yash_raj_productions,7_03_42,Chillies (Dried),KERALA,2018,1.72,1.62
+34,yash_raj_productions,7_03_42,Chillies (Dried),MADHYA PRADESH,2016,72.13,132.44
+35,yash_raj_productions,7_03_42,Chillies (Dried),MADHYA PRADESH,2017,85,135.53
+36,yash_raj_productions,7_03_42,Chillies (Dried),MADHYA PRADESH,2018,90.98,244.55
+37,yash_raj_productions,7_03_42,Chillies (Dried),MAHARASHTRA,2016,99.5,45.6
+38,yash_raj_productions,7_03_42,Chillies (Dried),MAHARASHTRA,2017,17.32,35.88
+39,yash_raj_productions,7_03_42,Chillies (Dried),MAHARASHTRA,2018,2.34,6.2
+40,yash_raj_productions,7_03_42,Chillies (Dried),MANIPUR,2016,6.5,3.9
+41,yash_raj_productions,7_03_42,Chillies (Dried),MANIPUR,2017,6.5,3.9
+42,yash_raj_productions,7_03_42,Chillies (Dried),MANIPUR,2018,6.5,3.9
+43,yash_raj_productions,7_03_42,Chillies (Dried),MEGHALAYA,2016,2.25,2.08
+44,yash_raj_productions,7_03_42,Chillies (Dried),MEGHALAYA,2017,2.32,2.24
+45,yash_raj_productions,7_03_42,Chillies (Dried),MEGHALAYA,2018,2.32,2.35
+46,yash_raj_productions,7_03_42,Chillies (Dried),MIZORAM,2016,9.14,9.33
+47,yash_raj_productions,7_03_42,Chillies (Dried),MIZORAM,2017,9.24,9.33
+48,yash_raj_productions,7_03_42,Chillies (Dried),MIZORAM,2018,11.2,10.92
+49,yash_raj_productions,7_03_42,Chillies (Dried),NAGALAND,2016,6.81,50.39
+50,yash_raj_productions,7_03_42,Chillies (Dried),NAGALAND,2017,5.58,40.89
+51,yash_raj_productions,7_03_42,Chillies (Dried),NAGALAND,2018,0.18,0.81
+52,yash_raj_productions,7_03_42,Chillies (Dried),ODISHA,2016,75,70
+53,yash_raj_productions,7_03_42,Chillies (Dried),ODISHA,2017,71.7,69.17
+54,yash_raj_productions,7_03_42,Chillies (Dried),ODISHA,2018,71.7,69.17
+55,yash_raj_productions,7_03_42,Chillies (Dried),PUNJAB,2016,7.5,14.08
+56,yash_raj_productions,7_03_42,Chillies (Dried),PUNJAB,2017,7.5,14.08
+57,yash_raj_productions,7_03_42,Chillies (Dried),PUNJAB,2018,7.5,14.08
+58,yash_raj_productions,7_03_42,Chillies (Dried),RAJASTHAN,2016,12.32,18.22
+59,yash_raj_productions,7_03_42,Chillies (Dried),RAJASTHAN,2017,11.13,18.78
+60,yash_raj_productions,7_03_42,Chillies (Dried),RAJASTHAN,2018,8.06,13.34
+61,yash_raj_productions,7_03_42,Chillies (Dried),TAMIL NADU,2016,44.37,19.55
+62,yash_raj_productions,7_03_42,Chillies (Dried),TAMIL NADU,2017,44.18,21.48
+63,yash_raj_productions,7_03_42,Chillies (Dried),TAMIL NADU,2018,2.53,1.9
+64,yash_raj_productions,7_03_42,Chillies (Dried),TELANGANA,2016,81.6,227.61
+65,yash_raj_productions,7_03_42,Chillies (Dried),TELANGANA,2017,126,461
+66,yash_raj_productions,7_03_42,Chillies (Dried),TELANGANA,2018,73.78,340.8
+67,yash_raj_productions,7_03_42,Chillies (Dried),TRIPURA,2016,2.35,3.7
+68,yash_raj_productions,7_03_42,Chillies (Dried),TRIPURA,2017,2.35,3.7
+69,yash_raj_productions,7_03_42,Chillies (Dried),TRIPURA,2018,2.77,6.31
+70,yash_raj_productions,7_03_42,Chillies (Dried),UTTAR PRADESH,2016,13.55,10.26
+71,yash_raj_productions,7_03_42,Chillies (Dried),UTTAR PRADESH,2017,13.55,10.26
+72,yash_raj_productions,7_03_42,Chillies (Dried),UTTAR PRADESH,2018,13.64,12.58
+73,yash_raj_productions,7_03_42,Chillies (Dried),UTTARAKHAND,2016,9,7.2
+74,yash_raj_productions,7_03_42,Chillies (Dried),UTTARAKHAND,2017,9,7.2
+75,yash_raj_productions,7_03_42,Chillies (Dried),UTTARAKHAND,2018,9,7.2
+76,yash_raj_productions,7_03_42,Chillies (Dried),WEST BENGAL,2016,65.12,100.34
+77,yash_raj_productions,7_03_42,Chillies (Dried),WEST BENGAL,2017,65.12,100.34
+78,yash_raj_productions,7_03_42,Chillies (Dried),WEST BENGAL,2018,65.12,100.34
+79,yash_raj_productions,7_03_42,Chillies (Dried),OTHERS,2016,0.4,0.64
+80,yash_raj_productions,7_03_42,Chillies (Dried),OTHERS,2017,0.4,0.63
+81,yash_raj_productions,7_03_42,Chillies (Dried),OTHERS,2018,0.07,0.33

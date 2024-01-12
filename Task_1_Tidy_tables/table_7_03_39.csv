@@ -1,0 +1,50 @@
+id,team_name,table_name,crop_name,states,year,area,production
+1,yash_raj_productions,7_03_39,Cashewnut,ANDHRA PRADESH,2016,185.57,95.5
+2,yash_raj_productions,7_03_39,Cashewnut,ANDHRA PRADESH,2017,185.57,111.39
+3,yash_raj_productions,7_03_39,Cashewnut,ANDHRA PRADESH,2018,186.78,116.92
+4,yash_raj_productions,7_03_39,Cashewnut,ASSAM,2016,1.05,1
+5,yash_raj_productions,7_03_39,Cashewnut,ASSAM,2017,1.05,1.08
+6,yash_raj_productions,7_03_39,Cashewnut,ASSAM,2018,1.05,1.13
+7,yash_raj_productions,7_03_39,Cashewnut,CHHATTISGARH,2016,13.7,8
+8,yash_raj_productions,7_03_39,Cashewnut,CHHATTISGARH,2017,13.7,9.33
+9,yash_raj_productions,7_03_39,Cashewnut,CHHATTISGARH,2018,13.7,9.83
+10,yash_raj_productions,7_03_39,Cashewnut,GUJARAT,2016,7.22,6.5
+11,yash_raj_productions,7_03_39,Cashewnut,GUJARAT,2017,7.22,6.5
+12,yash_raj_productions,7_03_39,Cashewnut,GUJARAT,2018,7.25,6.5
+13,yash_raj_productions,7_03_39,Cashewnut,JHARKHAND,2016,14.83,5
+14,yash_raj_productions,7_03_39,Cashewnut,JHARKHAND,2017,14.83,5.83
+15,yash_raj_productions,7_03_39,Cashewnut,JHARKHAND,2018,14.83,6.13
+16,yash_raj_productions,7_03_39,Cashewnut,KARNATAKA,2016,125.86,73
+17,yash_raj_productions,7_03_39,Cashewnut,KARNATAKA,2017,127.86,85.15
+18,yash_raj_productions,7_03_39,Cashewnut,KARNATAKA,2018,129.07,89.45
+19,yash_raj_productions,7_03_39,Cashewnut,KERALA,2016,87.01,72
+20,yash_raj_productions,7_03_39,Cashewnut,KERALA,2017,90.87,83.98
+21,yash_raj_productions,7_03_39,Cashewnut,KERALA,2018,92.81,88.18
+22,yash_raj_productions,7_03_39,Cashewnut,MAHARASHTRA,2016,186.2,220
+23,yash_raj_productions,7_03_39,Cashewnut,MAHARASHTRA,2017,186.2,256.61
+24,yash_raj_productions,7_03_39,Cashewnut,MAHARASHTRA,2018,191.45,269.44
+25,yash_raj_productions,7_03_39,Cashewnut,MANIPUR,2016,0.9,0.32
+26,yash_raj_productions,7_03_39,Cashewnut,MANIPUR,2017,0.9,0.32
+27,yash_raj_productions,7_03_39,Cashewnut,MANIPUR,2018,0.9,0.32
+28,yash_raj_productions,7_03_39,Cashewnut,MEGHALAYA,2016,8.5,5
+29,yash_raj_productions,7_03_39,Cashewnut,MEGHALAYA,2017,8.5,5.83
+30,yash_raj_productions,7_03_39,Cashewnut,MEGHALAYA,2018,8.58,6.12
+31,yash_raj_productions,7_03_39,Cashewnut,MIZORAM,2016,0,0
+32,yash_raj_productions,7_03_39,Cashewnut,NAGALAND,2016,0.5,0.54
+33,yash_raj_productions,7_03_39,Cashewnut,NAGALAND,2017,0.5,0.54
+34,yash_raj_productions,7_03_39,Cashewnut,NAGALAND,2018,0.5,0.54
+35,yash_raj_productions,7_03_39,Cashewnut,ODISHA,2016,182.91,80.5
+36,yash_raj_productions,7_03_39,Cashewnut,ODISHA,2017,183.32,93.9
+37,yash_raj_productions,7_03_39,Cashewnut,ODISHA,2018,193.99,98.59
+38,yash_raj_productions,7_03_39,Cashewnut,TAMIL NADU,2016,141.33,58
+39,yash_raj_productions,7_03_39,Cashewnut,TAMIL NADU,2017,141.58,67.65
+40,yash_raj_productions,7_03_39,Cashewnut,TAMIL NADU,2018,142.28,71.03
+41,yash_raj_productions,7_03_39,Cashewnut,TRIPURA,2016,4.25,3
+42,yash_raj_productions,7_03_39,Cashewnut,TRIPURA,2017,4.25,3.45
+43,yash_raj_productions,7_03_39,Cashewnut,TRIPURA,2018,4.25,3.45
+44,yash_raj_productions,7_03_39,Cashewnut,WEST BENGAL,2016,11.36,12
+45,yash_raj_productions,7_03_39,Cashewnut,WEST BENGAL,2017,11.36,12.96
+46,yash_raj_productions,7_03_39,Cashewnut,WEST BENGAL,2018,11.36,12.96
+47,yash_raj_productions,7_03_39,Cashewnut,OTHERS,2016,64.37,30.56
+48,yash_raj_productions,7_03_39,Cashewnut,OTHERS,2017,0.61,0.17
+49,yash_raj_productions,7_03_39,Cashewnut,OTHERS,2018,63.25,36.42
