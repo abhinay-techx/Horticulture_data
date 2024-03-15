@@ -23,10 +23,10 @@ Before diving into the project, make sure you have the following installed:
 
 1. Clone the repository:
     
-    ```bash
+    
     git clone https://github.com/abhinaykumar-47/Horticulture_data.git
     
-    ```
+
     
 2. Open the R project in RStudio.
 3. Set up any required R packages by running the necessary installation commands.
